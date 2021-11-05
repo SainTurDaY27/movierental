@@ -27,6 +27,7 @@ class PriceCode(Enum):
 
     @classmethod
     def for_movie(cls, movie):
+        """Method that identify the type of movie depending on its price code."""
         price_code = cls.normal
         if movie.get_year() == str(datetime.now().year):
             price_code = cls.new_release
@@ -45,10 +46,6 @@ class Movie:
         self.__title = title
         self.__year = year
         self.__genre = genre
-
-    # def get_price_code(self):
-    #     # get the price code
-    #     return self.price_code
 
     def get_title(self):
         return self.__title
@@ -69,16 +66,21 @@ class Movie:
 
 
 class MovieCatalog:
+    """
+    Method that manage data in movies.csv.
+    """
     def __init__(self):
         self.data = []
 
     def read_data(self):
+        """Method that will open & read each row of data in movies.csv"""
         with open("movies.csv", "r") as raw_data:
             rows = list(csv.reader(raw_data))
             for i in range(len(rows)):
                 self.data.append(Movie(rows[i][1], rows[i][2], rows[i][3].split(sep='|')))
 
     def get_movie(self, title):
+        """Method that will return a movie that have same title of input movie."""
         for i in self.data:
             if i == title:
                 return self.data[i]

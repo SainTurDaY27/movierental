@@ -1,5 +1,4 @@
 import unittest
-from customer import Customer
 from rental import Rental
 from movie import *
 
@@ -15,7 +14,6 @@ class RentalTest(unittest.TestCase):
         """trivial test to catch refactoring errors or change in API of Movie"""
         m = Movie("My movie", "2002", ["Drama"])
         self.assertEqual("My movie", m.get_title())
-        # self.assertEqual(PriceCode.normal, m.get_price_code())
 
     def test_rental_price(self):
         """Tests for method get_price() for returning rental price"""

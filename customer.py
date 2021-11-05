@@ -2,6 +2,7 @@ from rental import Rental
 from movie import *
 from datetime import datetime
 
+
 class Customer:
     """
        A customer who rents movies.
