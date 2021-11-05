@@ -15,9 +15,9 @@ class CustomerTest(unittest.TestCase):
 		movies = list of some movies
 		"""
         self.c = Customer("Movie Mogul")
-        self.new_movie = Movie("Mulan", PriceCode.NEW_RELEASE)
-        self.regular_movie = Movie("CitizenFour", PriceCode.REGULAR)
-        self.childrens_movie = Movie("Frozen", PriceCode.CHILDRENS)
+        self.new_movie = Movie("El Camino", str(datetime.now().year), ["Children"])
+        self.regular_movie = Movie("Frozen", "2002", ["Documentary"])
+        self.childrens_movie = Movie("The Irishman", "2017", ["Children"])
 
     @unittest.skip("No convenient way to test")
     def test_billing():

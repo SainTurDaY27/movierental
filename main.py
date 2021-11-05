@@ -4,14 +4,16 @@
 from movie import Movie
 from rental import Rental
 from customer import Customer
+from datetime import datetime
+
 
 def make_movies():
     movies = [
-        Movie("The Irishman", Movie.NEW_RELEASE),
-        Movie("CitizenFour", Movie.REGULAR),
-        Movie("Frozen", Movie.CHILDRENS),
-        Movie("El Camino", Movie.NEW_RELEASE),
-        Movie("Particle Fever", Movie.REGULAR)
+        Movie("The Irishman", "2017", ["Children"]),
+        Movie("CitizenFour", str(datetime.now().year), ["Horror"]),
+        Movie("Frozen", "2002", ["Documentary"]),
+        Movie("El Camino", str(datetime.now().year), ["Children"]),
+        Movie("Particle Fever", "2016", ["Sci-Fi"])
     ]
     return movies
 
