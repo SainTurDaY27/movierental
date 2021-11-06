@@ -8,6 +8,7 @@ from datetime import datetime
 
 
 def make_movies():
+    """Make movie from Movie class."""
     movies = [
         Movie("The Irishman", "2017", ["Children"]),
         Movie("CitizenFour", str(datetime.now().year), ["Horror"]),

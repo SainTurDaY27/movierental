@@ -17,6 +17,7 @@ class Customer:
         self.rentals = []
 
     def add_rental(self, rental: Rental):
+        """ Method that will create new rental data if input data is not in self.rentals."""
         if rental not in self.rentals:
             self.rentals.append(rental)
 

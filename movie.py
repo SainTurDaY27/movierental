@@ -22,6 +22,7 @@ class Movie:
         return self.__genre
 
     def is_genre(self, genre):
+        """Method that will return true if genre match one of the movie's genre."""
         for i in self.__genre:
             if i == genre:
                 return True

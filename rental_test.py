@@ -7,6 +7,10 @@ from datetime import datetime
 class RentalTest(unittest.TestCase):
 
     def setUp(self):
+        """Test fixture contains:
+
+		movies = list of some movies
+		"""
         self.new_movie = Movie("El Camino", str(datetime.now().year), ["Children"])
         self.regular_movie = Movie("Frozen", "2002", ["Documentary"])
         self.childrens_movie = Movie("The Irishman", "2017", ["Children"])
