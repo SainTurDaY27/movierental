@@ -1,39 +1,4 @@
 import csv
-from enum import Enum
-from datetime import datetime
-
-
-class PriceCode(Enum):
-    """An enumeration for different kinds of movies and their behavior"""
-    new_release = {"price": lambda days: 3.0 * days,
-                   "frp": lambda days: days
-                   }
-    normal = {"price": lambda days: 2.0 + 1.5 * (days - 2),
-              "frp": lambda days: 1
-              }
-    childrens = {"price": lambda days: 1.5 + 1.5 * (days - 3),
-                 "frp": lambda days: 1
-                 }
-
-    def price(self, days: int) -> float:
-        """Return the rental price for a given number of days"""
-        pricing = self.value["price"]  # the enum member's price formula
-        return pricing(days)
-
-    def frequent_renter_point(self, days):
-        """Return the rental point for a given number of days"""
-        frp = self.value["frp"]
-        return frp(days)
-
-    @classmethod
-    def for_movie(cls, movie):
-        """Method that identify the type of movie depending on its price code."""
-        price_code = cls.normal
-        if movie.get_year() == str(datetime.now().year):
-            price_code = cls.new_release
-        elif "Children" in movie.get_genre():
-            price_code = cls.childrens
-        return price_code
 
 
 class Movie:

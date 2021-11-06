@@ -3,6 +3,7 @@ import unittest
 from customer import Customer
 from rental import Rental
 from movie import *
+from datetime import datetime
 
 
 class CustomerTest(unittest.TestCase):

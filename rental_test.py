@@ -1,6 +1,7 @@
 import unittest
 from rental import Rental
 from movie import *
+from datetime import datetime
 
 
 class RentalTest(unittest.TestCase):
